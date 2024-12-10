@@ -1,10 +1,10 @@
 resource "aws_instance" "Ali" {
-  ami           = "ami-05edb7c94b324f73c"
-  key_name      = "salehi"
-  instance_type = "t3.micro"
+  ami           = var.ami_id
+  key_name      = var.key_name
+  instance_type = var.instance_type
 
   tags = {
-    Name       = "AliAgha"
+    Name       = var.machine_name
     Created_By = "terraform"
   }
 }
