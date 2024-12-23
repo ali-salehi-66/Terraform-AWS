@@ -1,24 +1,38 @@
-resource "aws_instance" "Ali" {
-  ami           = var.ami_id
-  key_name      = var.key_name
-  instance_type = var.instance_type
+module "ec2" {
+  source = "./module"
 
-  tags = {
-    Name       = var.machine_name
-    Created_By = "terraform"
-  }
+  instance_name = "ali11"
+   key_name      = "salehi"
 }
+module "ec21" {
+  source = "./module"
+
+  instance_name = "ali22"
+   key_name      = "salehi"
+}
+
+
+#resource "aws_instance" "Ali" {
+# ami           = var.ami_id
+#key_name      = var.key_name
+#instance_type = var.instance_type
+
+#tags = {
+# Name       = var.machine_name
+#Created_By = "terraform"
+#}
+#}
 #terraform import aws_instance.Ali1 i-09a01d3c563ce7626
-resource "aws_instance" "Ali1" {
-  ami           = "ami-05edb7c94b324f73c"
-  key_name      = var.key_name
-  instance_type = "t3.micro"
+#resource "aws_instance" "Ali1" {
+# ami           = "ami-05edb7c94b324f73c"
+#key_name      = var.key_name
+#instance_type = "t3.micro"
 
-  tags = {
-    Name       = "aliagha2"
-    Created_By = "terraform"
-  }
-}
+#tags = {
+# Name       = "aliagha2"
+#Created_By = "terraform"
+#}
+#}
 
 
 
